@@ -9,6 +9,7 @@ void setup()
   pinMode(2, INPUT);
 }
 
+//timing the yellow LED
 void loop()
 {
   for (brightness = 0; brightness <= 255; brightness += 5) {
@@ -16,15 +17,12 @@ void loop()
     delay(30);
   }
 
+  //triggering the red LED when button is pressed
    buttonState = digitalRead(2);
-  // check if pushbutton is pressed.  if it is, the
-  // buttonState is HIGH
   if (buttonState == HIGH) {
-    // turn LED on
     digitalWrite(12, HIGH);
   } else {
-    // turn LED off
     digitalWrite(12, LOW);
   }
-  delay(10); // Delay a little bit to improve simulation performance
+  delay(10);
 }
